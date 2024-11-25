@@ -31,6 +31,16 @@ class Template
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+            footer {
+                background-image: url("/Core/Public/img/menu-bg-blue.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                transform: scale(-1, -1);
+            }
+            footer p {
+                transform: scale(-1, -1);
+            }
             CSS;
         // Replace placeholders
         $placeholders = ["{titulo}", "{estilo}", "{conteudo}"];
