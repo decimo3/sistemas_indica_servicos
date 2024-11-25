@@ -26,7 +26,7 @@ class Template
         }
         $estilo .= <<<CSS
             header {
-                background-image: url("/../Public/img/menu-bg-blue.svg");
+                background-image: url("/Core/Public/img/menu-bg-blue.svg");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;

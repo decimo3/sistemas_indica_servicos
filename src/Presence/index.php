@@ -1,7 +1,6 @@
 <?php
   require_once(__DIR__ . "/../vendor/autoload.php");
   use App\Core\Templates\Template;
-  $camera_icon_url = "\"" . __DIR__ . "Public/img/camera_button.png" . "\"";
   new Template(
     titulo: "Presença no DDS",
     estilo: <<<CSS
@@ -15,7 +14,7 @@
       #camera_button + label {
         width: 150px;
         height: 150px;
-        background: url($camera_icon_url) no-repeat center center;
+        background: url("/Presence/Public/img/camera_button.png") no-repeat center center;
         background-size: cover;
         display: inline-block;
         cursor: pointer;
