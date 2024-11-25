@@ -6,7 +6,6 @@
   abstract class PostgreSQL extends Database implements IDatabase
   {
     public const DEFAULT_PAGE_SIZE = 100;
-    private function __construct() {}
     function get_all_presence(int $page): array
     {
       $limit = $page * self::DEFAULT_PAGE_SIZE;
