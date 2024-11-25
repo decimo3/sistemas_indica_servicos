@@ -12,25 +12,30 @@ class Template
         string $titulo,
         string $estilo,
         string $conteudo
-    ) {
+    )
+    {
         $templateFile = __DIR__ . '/Template.html';
-
         // Check if the template file exists
         if (!file_exists($templateFile)) {
             throw new TemplateException("Template file '{$templateFile}' not found.");
         }
-
         // Read the file content
         $this->templateContent = file_get_contents($templateFile);
         if ($this->templateContent === false) {
             throw new TemplateException("Failed to read the template file '{$templateFile}'.");
         }
-
+        $estilo .= <<<CSS
+            header {
+                background-image: url("/../Public/img/menu-bg-blue.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            CSS;
         // Replace placeholders
         $placeholders = ["{titulo}", "{estilo}", "{conteudo}"];
         $values = [$titulo, $estilo, $conteudo];
         $this->templateContent = str_replace($placeholders, $values, $this->templateContent);
-
         // Output the final content
         echo $this->templateContent;
     }
