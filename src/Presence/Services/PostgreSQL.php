@@ -20,7 +20,7 @@
     }
     function set_one_presence(ResultPresenceList $presence): void
     {
-      parent::query("INSERT INTO presences (matricula, timestamp, singularity, state) VALUES ($presence->matricula, '$presence->timestamp', $presence->singularity, $presence->state)");
+      parent::query("INSERT INTO presences (matricula, timestamp, singularity, state) VALUES ($presence->matricula, '{$presence->timestamp->format(DATE_ATOM)}', $presence->singularity, $presence->state)");
     }
   }
 ?>
