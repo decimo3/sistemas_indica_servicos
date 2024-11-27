@@ -11,7 +11,7 @@ services:
     - "8080:80"
     - "4433:443"
     volumes:
-    - ./tmp/:/var/www/uploads/
+    - ./tmp/:/data/
     depends_on:
       - pgd
   pgd:
