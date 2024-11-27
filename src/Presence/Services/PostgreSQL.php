@@ -5,6 +5,10 @@
   use App\Presence\Schemas\ResultPresenceList;
   abstract class PostgreSQL extends Database implements IDatabase
   {
+    function __construct()
+    {
+      parent::__construct();
+    }
     public const DEFAULT_PAGE_SIZE = 100;
     function get_all_presence(int $page): array
     {
@@ -21,6 +25,10 @@
     function set_one_presence(ResultPresenceList $presence): void
     {
       parent::query("INSERT INTO presences (matricula, timestamp, singularity, state) VALUES ($presence->matricula, '{$presence->timestamp->format(DATE_ATOM)}', $presence->singularity, $presence->state)");
+    }
+    function __destruct()
+    {
+      parent::__destruct();
     }
   }
 ?>
