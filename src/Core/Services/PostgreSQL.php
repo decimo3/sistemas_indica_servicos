@@ -15,9 +15,6 @@
       $user = getenv("POSTGRES_USER");
       $pass = getenv("POSTGRES_PASSWORD");
       $this->scon = "host=$host port=$port dbname=$base user=$user password=$pass";
-    }
-    public function open_connection(): void
-    {
       $this->connection = pg_connect($this->scon);
       if(!$this->connection)
       {
@@ -41,17 +38,13 @@
       }
       return pg_fetch_all($result);
     }
-    public function close_connection(): void
+    function __destruct()
     {
       if ($this->connection)
       {
         pg_close($this->connection);
         $this->connection = null;
       }
-    }
-    function __destruct()
-    {
-      self::close_connection();
     }
   }
 ?>
