@@ -15,15 +15,9 @@
       titulo: "Houve um erro!",
       estilo: "",
       conteudo: <<<HTML
-        <p class="text-danger">
-          Houve um erro ao receber o arquivo.
-        </p>
-        <p>
-          Sua presença <strong>não</strong> foi registrada!
-        </p>
-        <p>
-          <a href="./">Voltar</a>
-        </p>
+        <p class="text-danger">Houve um erro ao receber o arquivo.</p>
+        <p>Sua presença <strong>não</strong> foi registrada!</p>
+        <p><a href="./">Voltar</a></p>
       HTML
       );
     http_response_code(400);
@@ -42,12 +36,10 @@
         HTML;
       }
       new Template(
-        titulo: "Houve um erro!",
+        titulo: "Registro inválido!",
         estilo: "",
         conteudo: $conteudo .= <<<HTML
-        <p>
-          Sua presença <strong>não</strong> foi registrada!
-        </p>
+        <p>Sua presença <strong>não</strong> foi registrada!</p>
         <p><a href="./">Voltar</a></p>
       HTML
       );
