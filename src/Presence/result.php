@@ -73,14 +73,14 @@
         );
       exit();
     }
-    catch (\Throwable $th)
+    catch (\Exception $erro)
     {
       new Template(
         titulo: "Algo deu errado!",
         estilo: "",
         conteudo: <<<HTML
           <p class="text-danger">Houve um erro ao receber o arquivo.</p>
-          <p class="text-danger">$th->message</p>
+          <p class="text-danger">{$erro->getMessage()}</p>
           <p>Sua presença <strong>não</strong> foi registrada!</p>
           <p><a href="./">Voltar</a></p>
         HTML
