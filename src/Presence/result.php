@@ -47,7 +47,7 @@
     exit();
   }
   $database = new Database();
-  $target_file = "/var/www/uploads/" . $presence_item->matricula . ".jpg";
+  $target_file = "/data/" . $presence_item->matricula . ".jpg";
   // Se o arquivo não existir, cadastrar usuário.
   if(!file_exists($target_file))
   {
